@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="vuejscss.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    <button @click="changeLink"> Click To Change Link</button>
+        <a :href="link">Link</a>
+    <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+    <div class="demo" :style="myStyle"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+    </div> 
+</body>
+    <script><!-- beginning of vuejs-->
+    new Vue({
+     el: '#app',
+        data: {
+            attachRed: false ,
+              link: 'http://google.com',
+            color: 'green',
+            width: 100
+        },
+        computed: {
+            divClasses: function() {
+                return {
+                    red: this.attachRed,
+                    blue: !this.attachRed
+                };
+                
+            },
+            myStyle: function() {
+                return{
+                    backgroundColor: this.color,
+                    width: this.width + 'px'
+                };
+            }
+        },
+        methods: {
+            changeLink: function() {
+                this.link = 'http://apple.com'
+            }
+         
+        }
+        
+      });
+    </script>
+</html>
