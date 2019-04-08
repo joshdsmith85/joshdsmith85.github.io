@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document for Soccer4U */
+.header {
+	text-align:center;
+	color: blue;
+	font:h1;
+	background-image:url(images/soccer_header.jpeg);
+	background-position:center;
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+    height: 200px;
+	width:100%;
+}
+body{
+    cursor:url(icons8-soccer-ball-26.png),auto;
+    
+}
+.jumbotron{
+    cursor: help;
+    
+}
